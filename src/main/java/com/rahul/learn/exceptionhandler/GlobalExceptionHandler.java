@@ -17,6 +17,10 @@ import com.rahul.learn.dto.ExceptionMessage;
 
 import jakarta.validation.ConstraintViolationException;
 
+/**
+ * @author rahul
+   @since  09-Jan-2024 2024 1:10:28 pm
+ */
 @RestControllerAdvice
 @Validated
 public class GlobalExceptionHandler {

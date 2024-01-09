@@ -2,6 +2,7 @@ package com.rahul.learn.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,10 @@ import com.rahul.learn.dto.DSANumber;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
+/**
+ * @author rahul
+   @since  09-Jan-2024 2024 1:10:00 pm
+ */
 @RestController
 @Slf4j
 public class LearnDSA {
@@ -43,14 +48,21 @@ public class LearnDSA {
                 right--;
             }
 		}
-		list.clear();
+		list.clear(); 
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Your error message");
 	}
 	
 	@PostMapping("/subArrays")
 	public ResponseEntity<?> subarrays(@RequestBody DSANumber numbers){
-		List<Integer> list = new ArrayList<>();
+		List<Integer> list = new LinkedList<>();
 		list = numbers.getNumbers().stream().sorted().collect(Collectors.toList());
+		int left = 0;
+		int right= list.size() -1;
+//		while(left<right) {
+//			if(list.get(left)< numbers.getTarget() < list.get(right)) {
+//				
+//			}
+//		}
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	

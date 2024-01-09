@@ -8,5 +8,21 @@ server:
 queue:
   jsonReader: activemq:JSONReader.queue
   fixedLengthReader: fixedLengthReader.queue
-  
+rahul:
+  bean:
+    amq: false
+    txnAmq: true
+  queue:
+    broker-url: tcp://localhost:61616
+    password: admin
+    userName: admin
+    amqComponentName: activemq
+    jmsPoolMaxConnection: 100
+    jmsPoolMaxActive: 10
+  external:
+    queues:
+      jsonReader: activemq:JSONReader.queue
+      fixedLengthReader: activemq:fixedLengthReader.queue
+    topics:
+      readTopic: activemq:topic:MyFirstTopic
   
