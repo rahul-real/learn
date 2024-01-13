@@ -13,5 +13,6 @@ public class Constants {
 	public static final String BEAN_FLAG = "rahul.bean";
 	public static final String TOPIC_NAME="rahul.external.topics";
 	public static final String QUEUE_NAME="rahul.external.queues";
+	public static final String STORED_PREFIX = "rahul.stored-proc-name";
 
 }

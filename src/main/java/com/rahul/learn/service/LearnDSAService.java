@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 import com.rahul.learn.dto.Numbers;
 import com.rahul.learn.repo.LearnRepository;
@@ -13,7 +13,7 @@ import com.rahul.learn.repo.LearnRepository;
  * @author rahul
    @since  09-Jan-2024 2024 1:11:07 pm
  */
-@Configuration
+@Service
 public class LearnDSAService {
 	
 	@Autowired

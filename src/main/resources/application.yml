@@ -1,16 +1,25 @@
-spring:
-  activemq:
-    broker-url: tcp://localhost:61616
-    password: admin
-    user: admin
 server:
   port : 8081
-queue:
-  jsonReader: activemq:JSONReader.queue
-  fixedLengthReader: fixedLengthReader.queue
+spring:
+  application:
+    name: JKDK
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=Rahul
+    username: SQL_Login
+    password: qwerty123
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    hikari:
+      pool-name: JKDKCP
+      connection-timeout: 30000
+      max-lifeTime: 2000000
+      maximum-pool-size: 100
+      idle-timeout: 30000
+      minimum-idle: 5
+    disable-prepared-statements-pool: false
+    prepared-statements-cache-size: 250
 rahul:
   bean:
-    amq: false
+    amq: true
     txnAmq: true
   queue:
     broker-url: tcp://localhost:61616
@@ -25,4 +34,5 @@ rahul:
       fixedLengthReader: activemq:fixedLengthReader.queue
     topics:
       readTopic: activemq:topic:MyFirstTopic
-  
+  stored-proc-name:
+    myfirstStroeProc: dbo.Addingthenumbers   
