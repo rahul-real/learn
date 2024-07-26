@@ -14,5 +14,7 @@ public class Constants {
 	public static final String TOPIC_NAME="rahul.external.topics";
 	public static final String QUEUE_NAME="rahul.external.queues";
 	public static final String STORED_PREFIX = "rahul.stored-proc-name";
+	public static final String SECRET = "5aa0df6362e67cc2ad4c4dfc73253ceeb1fbda88c6be31e2b448999278d09d1c";
+	public static final String USER_NAME = "username";
 
 }

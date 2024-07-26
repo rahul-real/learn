@@ -7,13 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rahul.learn.dto.Numbers;
+import com.rahul.learn.dto.UsersData;
 import com.rahul.learn.repo.LearnRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author rahul
    @since  09-Jan-2024 2024 1:11:07 pm
  */
 @Service
+@Slf4j
 public class LearnDSAService {
 	
 	@Autowired
@@ -40,10 +44,19 @@ public class LearnDSAService {
 		 List<Integer> sortedArray = numbers.getNumbers().stream()
 	                .sorted()
 	                .collect(Collectors.toList());
-		 learnRepository.insertvalues(sortedArray);
+		// learnRepository.insertvalues(sortedArray);
 		return sortedArray.reversed();
 		
 		
+	}
+
+	/**
+	 * @param txn
+	 * @return
+	 */
+	public UsersData getUserData(String txn) {
+		log.info("TransactionNumber {} Getting UserData ",txn);
+		return learnRepository.getUserData(txn);
 	}
 
 }
