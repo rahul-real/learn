@@ -80,10 +80,10 @@ public class DataSource {
 		return hds;
 		
 	}
-    
-    
+
+
     @Bean(name = "entityManagerFactory")
-    public EntityManagerFactory writeEntityManagerFactory(@Autowired HikariDataSource primaryDataSource) {
+    EntityManagerFactory writeEntityManagerFactory(@Autowired HikariDataSource primaryDataSource) {
     	LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
     	localContainerEntityManagerFactoryBean.setPersistenceUnitName("persistence.writing");
     	localContainerEntityManagerFactoryBean.setDataSource(primaryDataSource);

@@ -20,5 +20,7 @@ import lombok.Data;
 public class StoredProcedures {
 	
 	private String myfirstStroeProc;
+	
+	private String getUsers;
 
 }
